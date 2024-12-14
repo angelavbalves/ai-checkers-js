@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
@@ -11,7 +11,7 @@
         integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <link rel="stylesheet" href="/style.css">
     <link rel="shortcut icon" href="https://chessboardjs.com/favicon.ico" type="image/x-icon">
-    <title>Checker</title>
+    <title>Jogo de Damas</title>
 </head>
 
 <body>
@@ -19,36 +19,36 @@
     <div class="container-fluid px-5 pt-5">
         <div class="row">
             <div class="col-md-6 mb-3">
-                <h2 class="text-center mb-0">Checkers Game AI</h2>
+                <h2 class="text-center mb-0">Jogo de Damas com IA</h2>
                 <small class="text-center d-block"><a class="btn btn-link" target="_blank"
-                        href="https://github.com/ekoptra/ai-checkers-js">Source Code</a></small>
+                        href="https://github.com/ekoptra/ai-checkers-js">Código Fonte</a></small>
                 <div class="my-4">
                     <select class="form-select mb-3" id="pilihan-game">
-                        <option selected>Pilih Game</option>
-                        <option value="lawan">Lawan Komputer</option>
-                        <option value="komputer">Komputer vs Komputer</option>
+                        <option selected>Escolha o Jogo</option>
+                        <option value="lawan">Contra o Computador</option>
+                        <option value="komputer">Computador vs Computador</option>
                     </select>
                     <select class="form-select mb-3 d-none" id="level-hitam">
-                        <option selected>Pilih Level Bidak Hitam</option>
-                        <option value="3">Bidak Hitam Level 1 (Depth AI = 3)</option>
-                        <option value="6">Bidak Hitam Level 2 (Depth AI = 6)</option>
-                        <option value="8">Bidak Hitam Level 3 (Depth AI = 8)</option>
-                        <option value="10">Bidak Hitam Level 4 (Depth AI = 10)</option>
+                        <option selected>Escolha o Nível das Peças Pretas</option>
+                        <option value="3">Peças Pretas Nível 1 (Profundidade IA = 3)</option>
+                        <option value="6">Peças Pretas Nível 2 (Profundidade IA = 6)</option>
+                        <option value="8">Peças Pretas Nível 3 (Profundidade IA = 8)</option>
+                        <option value="10">Peças Pretas Nível 4 (Profundidade IA = 10)</option>
                     </select>
                     <select class="form-select mb-3 d-none" id="level-putih">
-                        <option selected>Pilih Level Bidak Putih</option>
-                        <option value="3">Bidak Putih Level 1 (Depth AI = 3)</option>
-                        <option value="6">Bidak Putih Level 2 (Depth AI = 6)</option>
-                        <option value="8">Bidak Putih Level 3 (Depth AI = 8)</option>
-                        <option value="10">Bidak Putih Level 4 (Depth AI = 10)</option>
+                        <option selected>Escolha o Nível das Peças Brancas</option>
+                        <option value="3">Peças Brancas Nível 1 (Profundidade IA = 3)</option>
+                        <option value="6">Peças Brancas Nível 2 (Profundidade IA = 6)</option>
+                        <option value="8">Peças Brancas Nível 3 (Profundidade IA = 8)</option>
+                        <option value="10">Peças Brancas Nível 4 (Profundidade IA = 10)</option>
                     </select>
                 </div>
                 <div class="text-center">
-                    <button class="btn btn-success" disabled id="tombol-mulai">Mulai Permainan</button>
+                    <button class="btn btn-success" disabled id="tombol-mulai">Iniciar Jogo</button>
                 </div>
                 <div class="card mt-3">
                     <div class="card-header">
-                        <h5>History Perpindahan <span class="lama-bermain"></span></h5>
+                        <h5>Histórico de Movimentos <span class="lama-bermain"></span></h5>
                     </div>
                     <div class="card-body" id="history">
                         <ul class="list-group" id="list-history"></ul>
@@ -63,7 +63,7 @@
                     <div class="col-sm-6 mb-3">
                         <div class="card">
                             <div class="card-body">
-                                <h5 class="card-title">Giliran</h5>
+                                <h5 class="card-title">Turno</h5>
                                 <p class="mb-0" id="giliran"> - </p>
                             </div>
                         </div>
@@ -71,15 +71,15 @@
                     <div class="col-sm-6">
                         <div class="card">
                             <div class="card-body">
-                                <h5 class="card-title">Pemenang</h5>
+                                <h5 class="card-title">Vencedor</h5>
                                 <p class="mb-0" id="pemenang"> - </p>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="text-center">
-                    <button class="btn btn-danger d-none" id="tombol-menyerah">Menyerah</button>
-                    <button class="btn btn-danger d-none" id="tombol-hentikan">Hentikan Permainan</button>
+                    <button class="btn btn-danger d-none" id="tombol-menyerah">Desistir</button>
+                    <button class="btn btn-danger d-none" id="tombol-hentikan">Parar Jogo</button>
                 </div>
             </div>
         </div>
